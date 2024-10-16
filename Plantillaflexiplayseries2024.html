@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial - Galería de imágenes</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#myInput').on('input', function() {
+var value = $(this).val().toLowerCase();
+$('.gallery >.poster').filter(function() {
+$(this).toggle($(this).find('a').attr('title').toLowerCase().indexOf(value) > -1)});});});
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{user-select:none;margin:0;padding:0;box-sizing:border-box;outline:none;user-select:none;}
+body{background:#000000;}
+#xs-header{background:#000;left: 0;position: fixed;top: 0;width: 100%;z-index: 90;height: 8%;}
+.xsposter{margin:0px;position:relative;display:inline-block;overflow-x:scroll;overflow-y:hidden;}
+play{background:#000;color:#fff;padding:5px;left:0;right:0;height:2.5em;display:flex;flex-direction:row;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;}
+.wrapper{margin:0px;max-width:1100px;}
+.wrapper nav{display:flex;justify-content:center;}
+.wrapper .items{display:flex;max-width:720px;width:100%;justify-content:space-between;overflow:auto;}
+.items span{background:#000000;color:#fff;padding:7px 25px;font-size:15px;cursor:pointer;border:0px solid #ddd;transition: all 0.3s ease;}
+.items span.active{color:#fff;background:#ff0014;}
+.gallery{display: flex;flex-wrap: wrap;margin-top: 3px;}
+.gallery .poster{width: calc(100% / 3);padding:5px;}
+.gallery .poster span{display: flex;width: 100%;overflow: hidden;}
+.gallery .poster img{background:#000000;border-radius:7px;vertica1-align: middle;transition: all 0.3s ease;cursor: pointer;}
+.gallery .poster.hide{display: none;}
+@keyframes animate {
+0%{transform: scale(0.5);}
+100%{transform: scale(1);}}
+@media (max-width: 1000px) {
+.gallery .poster{width: calc(100% / 6);}}
+@media (min-width: 1360px) {
+.gallery {margin-left: -10%;margin-right: -10%;}}
+@media (max-width: 800px) {
+.gallery .poster{width: calc(100% / 5);}}
+@media (max-width: 700px) {
+.wrapper nav .items{max-width: 1000px;}nav .items span{padding: 7px 15px}}
+@media (max-width: 600px) {
+.wrapper{margin: 0px auto;}
+.wrapper nav .items{overflow: auto;}
+nav .items span{margin:0px;}
+.gallery .poster{width: calc(100% / 3);}} 
+
+.xaviec{background:#000000;position:fixed;top:-5px;width:100%;}
+</style>
+</head>
+<body>
+<div class="xaviec">
+<play>
+<h1 style="color:#000000;font-size:35px;"><strong style="color:#000000;"></strong></h1>
+<input id="myInput" type="search" placeholder="Buscar Series..." size="13" style="border-radius: 6px; outline: none; border: 0px; padding: 4px 4px; font-size: 12pt;">
+</play>
+<div class="wrapper">
+<nav><div class="items">
+    
+<div><h2><font size="4" color="#fff" face="arial">ㅤㅤㅤㅤㅤSERIES ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</font></h2>
+
+</div></nav></div></div><br><br><br><br>
+
+<style type="text/css">
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Raleway';}
+body{background:#000000;}
+div .xstv{overflow-x:scroll;overflow-y:hidden;white-space:nowrap;margin:1px;border-radius:7px;}
+#header{position:fixed;width:100%;top:-5px;}
+footer{background:#000;display:flex;width:100%;bottom:0;justify-content:space-around;align-items:center;padding:6px 2px;position:fixed;left:0;right:0px;color:#FFFFFF;}
+footer div{font-size:10px;text-align:center;justify-content:center;align-items:center;}
+footer i{padding-left:0px;}
+/*footer end*/
+footer img{height:20px;width:20px;margin-bottom:3px;}
+footer svg{height:20px;width:20px;margin-bottom:3px;}
+footer span{transform:scale(1);}
+#s-f{margin-bottom:40px;}
+.slider{width:100%;margin:auto;overflow:hidden;}
+.slider ul{display:flex;padding:0;width:400%;
+animation:cambio 10s infinite alternate linear;}
+.slider li{width:100%;list-style:none;}
+.slider img{width:100%;}
+@keyframes cambio{0% {margin-left: 0;}20% {margin-left: 0;}25% {margin-left: -100%;}45% {margin-left: -100%;}50% {margin-left: -200%;}70% {margin-left: -200%;}75% {margin-left: -300%;}100% {margin-left: -300%;}}
+</style>
+<script type="text/javascript">
+//tabs
+function xavi(tabc) {var i;
+var xavi = document.getElementsByClassName("xaviec");
+for (i = 0; i < xavi.length; i++) {xavi[i].style.display = "none";}
+document.getElementById(tabc).style.display = "block";}
+</script>
+</div>
+<!-- Slider Portada -->
+<div class="slider">
+<ul><li><a href="go:26"><img src="https://i.postimg.cc/66FpNYh6/20241016-131229-0000.png" alt=""></a></li>  
+
+<li><a href="go:25"><img src="https://i.postimg.cc/k5MnyZ7s/20241016-133559-0000.png" alt=""></a></li> 
+
+
+<li><a href="go:24"><img src="https://i.postimg.cc/KzRx6Mkg/20241016-132956-0000.png" alt=""></a></li> 
+
+<li><a href="go:16"><img src="https://i.postimg.cc/0Nt9XfQs/20241016-132130-0000.png" alt=""></a></li>
+</ul>
+</div>
+
+<div class="gallery">
+<a href="go:B25" title="Grotesquerie">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/qWirZwZ6P5FGvExwRNbjFR4qehN.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B26" title="Dragon ball daima">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/fHJgkdisqyP4aHM9HFcDDjJJaLX.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B28" title="Agatha en todas partes">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/sCCxIHlXRXPABbJ4JVMOi7RhQmq.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B24" title="From">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/5ml7e84jdyrmxKkoFiRQ3c2OjBo.jpg" width="110px" height="140px"></span></a>
+</div>
+ 
+<a href="go:B1" title="Año 1899">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gZleGu1MQVBArH2dlpZ9CGi0hhy.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="go:B12" title="Presunto inocente">
+<div class="poster" data-name=""><span><img src="https://image-tmdb-org.translate.goog/t/p/w440_and_h660_face/6jYbbIs9D6OWkFnerqyMZ9YCHRI.jpg?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp" width="110px" height="140px"></span></a></div>
+
+<a href="go:B13" title="The Acolyte">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/mztdt3y6GBsJR69zHtszFezTCLT.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="go:B14" title="Eric">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/miirxTJI3Dx6L9brMaypWsRzqqV.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="go:B15" title="Knuckles">
+<div class="poster" data-name=""><span><img src="https://image-tmdb-org.translate.goog/t/p/w440_and_h660_face/sK6Nr6KNUA4WlAHyNBTioz9FK87.jpg?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp" width="110px" height="140px"></span></a></div>
+
+<a href="go:B16" title="Heartstopper">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/jer8TxOeYAxLM0K9vuOFr1qwRrZ.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B17" title="Tulsa King">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/fwTv3RPRAIy0maOMns5eYRRwnDk.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B18" title="Euphoria">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/3Q0hd3heuWwDWpwcDkhQOA6TYWI.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B19" title="Tales of the Walking Dead">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/zRMUHvTgQ79zteQafNI46Nd9XFm.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B20" title="The Walking Dead Daryl Dixon">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/AjnMXY6DH3nTDLYxdqksAH9Ft3n.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B21" title="Bridgerton">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/luoKpgVwi1E5nQsi7W0UuKHu2Rq.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B22" title="Merlina">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/bHgt90jnZVTEqkZXnQHbCecsxzn.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B23" title="Y ahora que el futuro segun bill gates">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/8miJuNPcuXhNLiWxVOUMDetaeXB.jpg" width="110px" height="140px"></span></a>
+</div>
+<a href="go:B27" title="Arnold">
+<div class="poster" data-name=""><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/o9KmWrG9rbFhB7jWW4vFHTmqv28.jpg" width="110px" height="140px"></span></a>
+</div>
+
+
+
+
+</div><br>
+<abajo>
+<script>
+const filterItem = document.querySelector(".items");
+const filterImg = document.querySelectorAll(".gallery .poster");
+window.onload = ()=>{ 
+filterItem.onclick = (selectedItem)=>{ 
+if(selectedItem.target.classList.contains("item")){ 
+filterItem.querySelector(".active").classList.remove("active"); 
+selectedItem.target.classList.add("active"); 
+let filterName = selectedItem.target.getAttribute("data-name"); 
+filterImg.forEach((image) => {
+let filterImges = image.getAttribute("data-name"); 
+if((filterImges == filterName) || (filterName == "all")){
+image.classList.remove("hide"); 
+image.classList.add("show"); }
+else{image.classList.add("hide"); image.classList.remove("show"); }});}}
+for (let i = 0; i < filterImg.length; i++) {
+filterImg[i].setAttribute("onclick", "preview(this)"); }}
+</script>
+</body>
