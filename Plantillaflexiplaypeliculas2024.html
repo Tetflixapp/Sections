@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla Ver peliculas flexi play</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#myInput').on('input', function() {
+var value = $(this).val().toLowerCase();
+$('.gallery >.poster').filter(function() {
+$(this).toggle($(this).find('a').attr('title').toLowerCase().indexOf(value) > -1)});});});
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{user-select:none;margin:0;padding:0;box-sizing:border-box;outline:none;user-select:none;}
+body{background:#000000;}
+#xs-header{background:#000;left: 0;position: fixed;top: 0;width: 100%;z-index: 90;height: 8%;}
+.xsposter{margin:0px;position:relative;display:inline-block;overflow-x:scroll;overflow-y:hidden;}
+play{background:#000;color:#fff;padding:5px;left:0;right:0;height:2.5em;display:flex;flex-direction:row;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;}
+.wrapper{margin:0px;max-width:1100px;}
+.wrapper nav{display:flex;justify-content:center;}
+.wrapper .items{display:flex;max-width:720px;width:100%;justify-content:space-between;overflow:auto;}
+.items span{background:#000000;color:#fff;padding:7px 25px;font-size:15px;cursor:pointer;border:0px solid #ddd;transition: all 0.3s ease;}
+.items span.active{color:#fff;background:#ff0014;}
+.gallery{display: flex;flex-wrap: wrap;margin-top: 3px;}
+.gallery .poster{width: calc(100% / 3);padding:5px;}
+.gallery .poster span{display: flex;width: 100%;overflow: hidden;}
+.gallery .poster img{background:#000000;border-radius:7px;vertica1-align: middle;transition: all 0.3s ease;cursor: pointer;}
+.gallery .poster.hide{display: none;}
+@keyframes animate {
+0%{transform: scale(0.5);}
+100%{transform: scale(1);}}
+@media (max-width: 1000px) {
+.gallery .poster{width: calc(100% / 6);}}
+@media (min-width: 1360px) {
+.gallery {margin-left: -10%;margin-right: -10%;}}
+@media (max-width: 800px) {
+.gallery .poster{width: calc(100% / 5);}}
+@media (max-width: 700px) {
+.wrapper nav .items{max-width: 1000px;}nav .items span{padding: 7px 15px}}
+@media (max-width: 600px) {
+.wrapper{margin: 0px auto;}
+.wrapper nav .items{overflow: auto;}
+nav .items span{margin:0px;}
+.gallery .poster{width: calc(100% / 3);}} 
+
+.xaviec{background:#000000;position:fixed;top:-5px;width:100%;}
+</style>
+</head>
+<body>
+<div class="xaviec">
+<play>
+<h1 style="color:#000000;font-size:35px;"><strong style="color:#000000;"></strong></h1>
+<input id="myInput" type="search" placeholder="Buscar Películas..." size="13" style="border-radius: 6px; outline: none; border: 0px; padding: 4px 4px; font-size: 12pt;">
+</play>
+<div class="wrapper">
+<nav><div class="items">
+    
+<h1><span class="item active" data-name="all">Todas</span></h1>
+
+<h1><span class="item" data-name="Estrenos">Estrenos</span></h1>
+
+<h1><span class="item" data-name="Acción">Acción</span></h1>
+
+<h1><span class="item" data-name="Terror">Terror</span></h1>
+
+<h1><span class="item" data-name="Infantiles">Infantiles</span></h1>
+
+<h1><span class="item" data-name="Comedia">Comedia</span></h1>
+
+<h1><span class="item" data-name="Aventura">Aventura</span></h1>
+
+<h1><span class="item" data-name="Romance">Romance</span></h1>
+
+<h1><span class="item" data-name="Drama">Drama</span></h1>
+
+
+</div></nav></div></div><br><br><br><br>
+<style type="text/css">
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Raleway';}
+body{background:#000000;}
+div .xstv{overflow-x:scroll;overflow-y:hidden;white-space:nowrap;margin:1px;border-radius:7px;}
+#header{position:fixed;width:100%;top:-5px;}
+footer{background:#000;display:flex;width:100%;bottom:0;justify-content:space-around;align-items:center;padding:6px 2px;position:fixed;left:0;right:0px;color:#FFFFFF;}
+footer div{font-size:10px;text-align:center;justify-content:center;align-items:center;}
+footer i{padding-left:0px;}
+/*footer end*/
+footer img{height:20px;width:20px;margin-bottom:3px;}
+footer svg{height:20px;width:20px;margin-bottom:3px;}
+footer span{transform:scale(1);}
+#s-f{margin-bottom:40px;}
+.slider{width:100%;margin:auto;overflow:hidden;}
+.slider ul{display:flex;padding:0;width:400%;
+animation:cambio 10s infinite alternate linear;}
+.slider li{width:100%;list-style:none;}
+.slider img{width:100%;}
+@keyframes cambio{0% {margin-left: 0;}20% {margin-left: 0;}25% {margin-left: -100%;}45% {margin-left: -100%;}50% {margin-left: -200%;}70% {margin-left: -200%;}75% {margin-left: -300%;}100% {margin-left: -300%;}}
+</style>
+<script type="text/javascript">
+//tabs
+function xavi(tabc) {var i;
+var xavi = document.getElementsByClassName("xaviec");
+for (i = 0; i < xavi.length; i++) {xavi[i].style.display = "none";}
+document.getElementById(tabc).style.display = "block";}
+</script>
+</div>
+<!-- Slider Portada -->
+<div class="slider">
+<ul><li><a href="https://ivanflexi.github.io/Index-verpeliculas/Terrifier3.html"><img src="https://i.postimg.cc/85b2ydbS/20241016-143636-0000.png" alt=""></a></li>  
+
+<li><a href="https://ivanflexi.github.io/Index-verpeliculas/Eljoker.html"><img src="https://i.postimg.cc/JzB9wCQK/20241016-143224-0000.png" alt=""></a></li> 
+
+<li><a href="https://ivanflexi.github.io/Index-verpeliculas/Elhoyo2.html"><img src="https://i.postimg.cc/jqg9LSgZ/20241016-142712-0000.png" alt=""></a></li> 
+
+<li><a href="https://ivanflexi.github.io/Index-verpeliculas/Elhoyo2.html"><img src="https://i.postimg.cc/wT1rJYnH/20241016-135355-0000.png" alt=""></a></li>
+</ul>
+</div>
+<div class="gallery">
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Terrifier3.html" title="Terrifier Payaso siniestro">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7NDHoebflLwL1CcgLJ9wZbbDrmV.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lasustancia.html" title="The Substance La sustancia">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/zQc1PITqFxZDbEmHlQgO5Mxc4Od.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elhoyo2.html" title="El hoyo 2">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/3awoWMKDfTROjGB2vivky1TCSRd.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Eljoker.html" title="Joker folie a deux el guazon 2 el joker 2">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/if8QiqCI7WAGImKcJCfzp6VTyKA.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Robotsalvaje.html" title="Robot salvaje">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/sDoXpaKZmrzCSJH63zZvQQ9A7VK.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elcuervo.html" title="The Crow el cuervo">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/X9iFHeIYgfqoZImvdidx8b9v4R.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Verfabricantesdelagrimas1.html
+" title="Fabricante de lágrimas">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/uoBHsxSgfc3PQsSn98RfnbePHOy.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Cazafantasmasimperioelado1.html
+" title="Cazafantasmas Imperio helado">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/r65fWcFELCSeyyrkq5wY09EPSGN.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Megamente2024.html" title="Megamind contra el sindicato del mal">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fko8CPrnspewLXgFUlUkivyvpHX.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/TheBeekeeper2024.html
+" title="Beekeeper El protector">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/A7EByudX0eOzlkQ2FIbogzyazm2.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Spaceman1.html
+" title="Spaceman El astronauta">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/f46WvKEsBn98WJbPJcO47ZoKn6B.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Kunfupanda1.html
+" title="Kung Fu Panda 4">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/GodzillayKong1.html
+" title="Godzilla y Kong: El nuevo imperio">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iG5sbWWK1JEPAxdt3ItsCMGGV4p.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/RoadHouse1.html" title="Road House De profesión duro">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/bXi6IQiQDHD00JFio5ZSZOeRSBh.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Siyofuerarico1.html
+" title="Si yo fuera rico">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5XtzmoxpQGVFhdoY6QoTQQVWfL7.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Transformersbestias1.html
+" title="Transformers El despertar de las bestias">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gPbM0MK8CP8A174rmUwGsADNYKD.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/SpiderMancruzandoelmulti1.html" title="Spider-Man Cruzando el Multiverso">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos10.html" title="Fast y Furious X Rapidos y Furiosos 10">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fiVW06jE7z9YnO4trhaMEdclSiC.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/MarioBros1.html" title="Super Mario Bros La película">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lasirenita1.html" title="La sirenita">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Ladybuglapelicula1.html
+" title="Prodigiosa Las aventuras de Ladybug La película">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dQNJ8SdCMn3zWwHzzQD2xrphR1X.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Barbie2023-1.html" title="Barbie">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/" title="Oppenheimer">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elgatoconbotas1.html" title="El Gato con Botas El último deseo">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kuf6dutpsT0vSVehic3EZIqkOBt.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Megalodon1.html" title="Megalodón 2 La fosa">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg" width="110px" height="140px"></span></a></div> 
+<a href="https://ivanflexi.github.io/Index-verpeliculas/FiveNights1.html
+" title="Five Nights at Freddy's">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Liftunrobodeprimera1.html" title="Lift Un robo de primera clase">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/46sp1Z9b2PPTgCMyA87g9aTLUXi.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Atravezdemiventana1.html" title="A través de mi ventana">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/jmkpZvMVIRrMFevxzOubSBfG0s0.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Atravesdelmar1.html" title="A través del mar">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6GyzbZf1MsXfrDWTnNXrzwr6G9q.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Atravezdemiventana3-1.html" title="A través de mi ventana 3 A través de tu mirada">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gwpTgtwVAwmvivBN8rAQABpx9Am.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Medellín1.html
+" title="Medellín">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/jKFOQ5LNQuIWGLdB2WhVlSUcS6F.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elexorcismodelpapa1.html" title="El exorcista del papa">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/jFC4LS5qTAT3PinzdEzINfu1CV9.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Maridos1.html" title="Maridos">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/h6pbOB5WIU8Fs9Wrhopb4y3WmMZ.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Osovicioso1.html" title="Oso vicioso">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gOnmaxHo0412UVr1QM5Nekv1xPi.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Tinytina1.html" title="Tin y Tina">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iIrXgFnYbrybAu9h3tUgPbnhBqo.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Damsel1.html
+" title="Damsel">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/AgHbB9DCE9aE57zkHjSmseszh6e.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Darkness1.html
+" title="Darkness of Man">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/tsj5oYBRoF5PuTYrfe1Hw6fsxfG.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Tarot1.html" title="Tarot">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gAEUXC37vl1SnM7PXsHTF23I2vq.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Amigosimaginarios1.html" title="Amigos imaginarios">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/8RgGuC7w8JxhykauzTC4bwha1J8.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Nahir1.html
+" title="Nahir">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/w4TcFexTfo5X7NkvNSeTrRSu9Sj.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/FuriosaDelasaga1.html" title="Furiosa De la saga Mad Max">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iADOJ8Zymht2JPMoy3R7xceZprc.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Badboys2.html" title="Bad Boys Ride or Die">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/BakiHanmavskengan1.html" title="Baki Hanma vs. Kengan Ashura">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/etbHJxil0wHvYOCmibzFLsMcl2C.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Intensamente2.html" title="intensa mente 2 Inside Out 2">
+<div class="poster" data-name="Estrenos"><span><img src="https://image-tmdb-org.translate.goog/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Winniethepooh1.html" title="Winnie the Pooh Miel y Sangre">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/wtFwgFFk1ze789ghcadWGEVjj3N.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Winniethepooh2-1.html" title="Winnie the Pooh Miel y sangre 2">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/2sADrLwMQof6yYmrJRSa04tFZuS.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Nefarious1.html" title="Nefarious">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/uFN5Hb8Gqn7VEmfSOOqPt8Udyb9.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/EnlasprofundidadesdelSena1.html" title="En las profundidades del Sena">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/flX5OSC1NAKHqjLIZL5YcyxtSXh.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Dune1.html" title="Dune parte 2">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/CivilWar1.html" title="Civil War">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Dune1-1.html" title="Dune">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/GodzillaMinusOne1.html" title="Godzilla Minus One">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/hkxxMIGaiCTmrEArK7J56JTKUlB.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elespecialista1.html" title="El especialista">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/ceiGl0SNZpR01o5lfYImt2QgKuq.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Atlas1.html" title="Atlas">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/qFTsoeMg1gGL5OTG0jecBAqlrlM.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rivales1.html" title="Challengers Rivales">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/Aiqfn4XtXUPr7QNsDsAKNQ1aOKV.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Arthur1.html" title="Arthur the King ">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/q1DDwFuWeQlwR0lcjFiEsM8iRkd.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Interstellar1.html" title="Interstellar">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Soncomoniños1-1.html" title="Son como niños Niños grandes">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/poUK5Gg7IkPokaBTjadzjPfJgKw.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Soncomoniños2-1.html" title="Son como niños 2 Niños grandes 2">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/bGvxZQOyvvjJMJENo9OnBzXOQzQ.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/NomanchesFrida1.html" title="No manches Frida">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6HfyXfIEywLa2HvcswKi44dDKxL.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/NomanchesFrida2-1.html" title="No manches Frida 2">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/rG7rDoTe1ZEa936eonDCkV76nkx.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/JohnWick4-1.html" title="John Wick 4">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Losextraños1.html" title="Los Extraños Capitulo 1">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/tnKmLDpSpJ3CfCav43z13fkeEnr.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/losextraños1.html" title="Los Extraños">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9zsA2xafNMA8BQmpQLdppLIGYAE.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Nosotros1.html" title="Nosotros">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/kUEbVMrs80nWXtTA8tKd8jRwnIn.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Golpedetestado1.html" title="Golpe de estado no escape">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/9fVNy1pySqQR70UpwGYNVArXSKf.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Missperegrine1.html" title="Miss Peregrine's">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/CIlbMFOfYDj0MP23hsIYhFGrL6.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Interesante1-1.html" title="Intensa Mente 1">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry1-1.html" title="Harry Potter y la piedra filosofal">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7xXJ15VEf7G9GdAuV1dO769yC73.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry2-1.html" title="Harry Potter y la cámara secreta">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry3-1.html" title="Harry Potter y el prisionero de Azkaban">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry4-1.html" title="Harry Potter y el cáliz de fuego">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry5-1.html" title="Harry Potter y la Orden del Fénix">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5aOyriWkPec0zUDxmHFP9qMmBaj.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry6.html" title="Harry Potter y el misterio del príncipe">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry7-parte1.html" title="Harry Potter y las Reliquias de la Muerte Parte 1">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry7-parte2.html" title="Harry Potter y las Reliquias de la Muerte Parte 2">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/c54HpQmuwXjHq2C9wmoACjxoom3.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Harry8.html" title="Harry Potter 20º Aniversario Regreso a Hogwarts">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/jntLBq0MLR3hrwKaTQswxACRPMs.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Loimposible.html" title="Lo imposible">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/oTtdBrZOaczS4ZcBJ0ZCzG65A4L.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elpaquete.html" title="El Paquete">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/9JZcc0EgHbvAwt9iFJIot4wNapY.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Juegodehonor.html" title="Juego de honor">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/y3HOTTyM5nLsdUzXFtFCohG28qj.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elconjuro1.html" title="El conjuro">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/10ir0eISr3p1MF1mjZwGTx7u4vv.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos1.html" title="Rapidos y Furiosos 1">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/rCdEN70nBLJfrzE7NwPtCSxjjrA.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos2.html" title="Rapidos y Furiosos 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/fZtSG5a6i5Ca39WQylLVmvWI5b.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos3.html" title="Rapidos y Furiosos 3">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/wTLaII3WAkQcsyiF4sI6PlXZ0dF.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos4.html" title="Rapidos y Furiosos 4">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/b4oE1Bw6KmON4qNIfjgJbVYkOWZ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos5.html" title="Rapidos y Furiosos 5">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/pJbX02gBzcGj1fbhO3cKH1IzCN5.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos6.html" title="Rapidos y Furiosos 6">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3EXOOkhSmJQ9DisNmIjZ8Xi633I.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos7.html" title="Rapidos y Furiosos 7">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos8.html" title="Rapidos y Furiosos 8">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dImWM7GJqryWJO9LHa3XQ8DD5NH.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rapidos9.html" title="Rapidos y Furiosos 9">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/RapidosHobbsyShaw.html" title="Rapidos y furiosos Hobbs & Shaw ">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Garfieldlapelicula.html" title="Garfield fuera de casa la pelicula">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/6QR2FOCQr41gSduN70WulRIhJb7.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lagranmuralla.html" title="La gran muralla">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/8IEfV0bsM2u1kB1t59ajWZ1lLu9.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Losguardianesdelabahia.html" title="Guardianes de la bahía">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/aPifsnK3ui76Cq7xMDe1AVlrA0k.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Porqueel.html" title="Por que el tenia que ser el">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/hxrDKXX0H0GQFbFP4vujo99EqoI.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Batmaninicia.html" title="Batman Begins Batman inicia">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4MpN4kIEqUjW8OPtOQJXlTdHiJV.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elultimomaestrodelaire.html" title="El último maestro del aire">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/mSNkzaCUGH2eH9T92BJHzkyoFl.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Piratasunalocaaventura.html" title="Piratas una loca aventura">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/bkLeXPDP6sramrTiF5W7TzUl4t0.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Spider-ManNoWayHome.html" title="Spider-Man sin camino a casa ">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Todounparto.html" title="Todo un parto">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/sqHybmI1y6uUnMwZGyaXnGpOLpj.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Quepasoayer.html" title="Que paso ayer">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/kZaaJQEi7n3mrBct1H3l2g45Ijb.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Quepasoayer2.html" title="Que paso ayer 2">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/98piHxHeanfwsZYxz7rJU0GXeMn.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Quepasoayer3.html" title="Que paso ayer 3">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/1goOfrB3ZRnoJenHHIDqiskMi9q.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Mivillanofavorito4.html" title="Mi villano favorito 4">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/cihfEI1cwTORZ9W0nDPgxiVCoiZ.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Deadpool3.html" title="Deadpool 3 Deadpool Y Wolverine">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Elgánsterelpolicía.html" title="The gangster the cop the devil El gángster el policía y el diablo">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/oHlM4abRm6BzrRcz9Nup1uidw9H.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Lovesimon.html" title="Love simon">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5YUYg5q7QfC4IoNwNUtiwdiYKPr.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Hazlocomohombre.html" title="Hazlo como hombre">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4q8htaBtqWT7tvVyBP9UES2fxA2.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Supercool.html" title="Supercool Super Cool">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Luca.html" title="Luca">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9x4i9uKGXt8IiiIF5Ey0DIoY738.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Observados.html" title="Observados">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/vZVEUPychdvZLrTNwWErr9xZFmu.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Romperelcirculo.html" title="Romper el circulo">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/4c3IdUFnS8qd3qrMol1b3Rq5MqF.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Alien2024.html" title="Alien Romulus">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/BirdBoxBarcelona.html" title="Bird Box Barcelona">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iTGBHdL12QEpLyRVlykDuiYxzAG.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Crepusculo1.html" title="Crepusculo">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3Gkb6jm6962ADUPaCBqzz9CTbn9.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Crepusculo2.html" title="Crepusculo Amanecer ">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qs8LsHKYlVRmJbFUiSUhhRAygwj.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Crepusculo3.html" title="Crepusculo eclipse">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Crepusculo4.html" title="Crepusculo amanecer">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/7IGdPaKujv0BjI0Zd0m0a4CzEjJ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Crepusculo5.html" title="Crepusculo luna nueva">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/k2qTooPlHffgNABNWxeJdGMglPK.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Coraline.html" title="Coraline y la puerta secreta">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4jeFXQYytChdZYE9JYO7Un87IlW.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/500diasconella.html" title="500 dias con ella 500 days of summer">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/f9mbM0YMLpYemcWx6o2WeiYQLDP.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Karatekid.html" title="Karate kid">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/bHjLC5GuBfeyW6ZE07x6TalKj19.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Geotormenta.html" title="Geo tormenta">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/4rJGCqrO8MSPdokdMoJB5sxeZ4i.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Themousetrap.html" title="The Mouse trap">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3ovFaFeojLFIl5ClqhtgYMDS8sE.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elcandidatohonesto.html" title="El candidato honesto">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/hmV5HPkbQuzgPo11Xm70CMQV3iZ.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Whiplash.html" title="Whiplash">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/6uSPcdGNA2A6vJmCagXkvnutegs.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Transformersone.html" title="Transformers One">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qbkAqmmEIZfrCO8ZQAuIuVMlWoV.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Losfeos.html" title="Los feos">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/abNsPyjwSYwOVsx2m0mWrq22xGk.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Comoentrenaratudragon.html" title="Como entrenar a tu dragon">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/92olhXYaIX6lvB8jwFz4OSfPaKq.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Comoentrenaratudragon2.html" title="Como entrenar a tu dragon 2">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/d13Uj86LdbDLrfDoHR5aDOFYyJC.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Comoentrenaratudragon3.html" title="como entrenar a tu dragon 3">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Comoentrenaratudragon4.html" title="Como entrenar a tu dragon regresa a casa">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kXj2Qrfm994yLeuADqbOieU1mUH.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Comoentrenaratudragon6.html" title="como entrenar a tu dragon el regalo de furia nocturna">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/tieHyFlHwnU4gdKY9vBNCW7U5iw.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Babydriver.html" title="Baby driver">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/rmnQ9jKW72bHu8uKlMjPIb2VLMI.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lamborghini.html" title="Lamborghini">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/RKgnYLhCNGCUkrhiCRrs40rEHe.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Proyectox.html" title="Proyecto x">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/lUPDGT3lyRrq8SvWuNWG2DP64bR.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Proyectogeminis.html" title="Proyecto geminis">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/uTALxjQU8e1lhmNjP9nnJ3t2pRU.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Proyectorampage.html" title="Proyecto rampage">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/MGADip4thVSErP34FAAfzFBTZ5.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Gigantesdeacero.html" title="Gigantes de acero">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4GIeI5K5YdDUkR3mNQBoScpSFEf.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Jackelcazagigantes.html" title="Jack el cazagigantes">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9jSI7saUX9Qz0JLh19jX2ulEwL7.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Glass.html" title="Glass">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Rendirsejamas.html" title="Rendirse jamas">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8oRUTyP1QAtGDMvRpKZyuyFPG0U.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rendirsejamas2.html" title="Rendirse jamas 2">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ywdD73k13XGho13MSUzQIDxD4iA.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rendirsejamas3.html" title="Rendirse jamas 3">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/pHVswTDHAvq9Npi0XCZ0qVMSiM2.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Colombiana.html" title="Colombiana Cataleya">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/rEdGDgRB3gducezNSIyx2lbKQy4.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Sonic.html" title="Sonic">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Sonic2.html" title="Sonic 2">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Uncharted.html" title="Uncharted">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/rJHC1RUORuUhtfNb4Npclx0xnOf.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Infinitywar.html" title="infinity war Avengers">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Endgame.html" title="Endgame Avengers">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/or06FN3Dka5tukK1e9sl16pB3iy.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Beetlejuice.html" title="Bitelchus Beetlejuice">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/nnl6OWkyPpuMm595hmAxNW3rZFn.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Beetlejuice2.html" title="Bitelchus 2 Beetlejuice Beetlejuice  2">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Puntodequiebre.html" title="Punto de quiebre">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/z7JOvw5Lqs9ezoFTJxmz3nx3av2.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Elhombrearaña.html" title="El hombre araña Spider-Man">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elhombrearaña2.html" title="El hombre araña 2 Spider-Man 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/olxpyq9kJAZ2NU1siLshhhXEPR7.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elhombreara%C3%B1a3.html" title="El hombre araña 3 Spider-Man 3">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Lamonja.html" title="La monja">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lamonja2.html" title="La monja 2">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Titanic.html" title="Titanic">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/ElexorcismodeGeorgetown.html" title="El exorcismo de Georgetown">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ar2h87jlTfMlrDZefR3VFz1SfgH.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Annabelle1.html" title="Annabelle">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/yLsuU2P2SpDYFwtZQ7dtfVAf6TE.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Annabelle2.html" title="Annabelle 2 La Creación">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Annabelle3.html" title="Annabelle vuelve a casa">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qWsHMrbg9DsBY3bCMk9jyYCRVRs.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Soyleyenda.html" title="El francotirador soy leyenda">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/ntso1nvAVIEdzjc4Tc9nB7MPSKu.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elunicosuperviviente.html" title="El unico superviviente emboscada">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/zaBIrloyhGK7iNTZMb3f9SARsl8.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Hobbit1.html" title="El Hobbit Un viaje inesperado">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Hobbit2.html" title="El Hobbi La desolación de Smaug">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Hobbit3.html" title="El Hobbi La batalla de los cinco ejercitos">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/xT98tLqatZPQApyRmlPL12LtiWp.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Anillos1.html" title="El señor de los anillos la comunidad del anillo">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Anillos2.html" title="El señor de los anillos las dos torres">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Anillos3.html" title="El señor de los anillos el retorno del Rey">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Venom1.hrml" title="Venom">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Venom2.hrml" title="Venom 2 carnage liberado">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1MJNcPZy46hIy2CmSqOeru0yr5C.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/It1.html" title="It 1 it 1">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/It2.html" title="It Capitulo dos It 2">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/zfE0R94v1E8cuKAerbskfD3VfUt.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Soyelnumerocuatro.html" title="Soy el numero cuatro">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/2NrP3h3GEsrPXX60bmjKuYWAvl9.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Bigmama1.html" title="Big mama Mi abuela es un peligro">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5YoSFqpTz5qIxsX61CPMGKONQIY.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Bigmama2.html" title="Big mama 2 Mi abuela es un peligro 2">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/wlbov6pkgySqYZilZcO54f29Dg1.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Bigmama2.html" title="Big mama 3 Mi abuela es un peligro 3">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/n1GSxFcDaZ6lMVf21M0KloPfuhu.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/10.000AC.html" title="10.000 A.C Evolet">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9I7gV6wRbGnbfI3XOKjHeLMjYEo.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/AsesinoNinja1.html" title="Asesino Ninja">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5twFaR5A1Y9C3KAt6uy6iq332m0.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Creed1.html" title="Creed">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1BfTsk5VWuw8FCocAhCyqnRbEzq.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Creed2.html" title="Creed 2">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/v3QyboWRoA4O9RbcsqH8tJMe8EB.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Creed3.html" title="Creed 3">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/cvsXj3I9Q2iyyIo95AecSd1tad7.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Lapurga1.html" title="La purga la noche de las bestias">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/46X1ei9uf13nkkr0OhWldGyr5Uh.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lapurga2.html" title="La purga 2 Anarchy La noche de las bestias">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qwqHHZLZSUvMkAMQ47ymtfjEifY.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lapurga3.html" title="La puerga 3 el año de la elección">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dx5pKJpGbJc9xrFQ8UR1XrrqmPj.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Lapurga4.html" title="La puerga 4 La purga por siempre">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/lB068qa6bQ0QKYKyC2xnYGvYjl7.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Ruegapornosotros.html" title="Ruega por nosotros">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/llHklmHQEDwTgbwGrPvQ5ouSy2k.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elexorcismodedios.html" title="El exorcismo de dios">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/8Tev1W93hM5YaHIY0j6goDENXyO.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Scareface.html" title="El Precio del Poder Scarface">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iQ5ztdjvteGeboxtmRdXEChJOHh.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Latumbadelasluciernagas.html" title="La tumba de las luciernagas">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/xTPa9c7Bgdq1BlZee24QeIx0jyR.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Garra.html" title="Garra">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/yjtvXD7FyjQSLqvatkY0y1CNazR.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Joker.html" title="Joker">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/TheSeaBeast.html" title="The Sea Beast Monstruo del mar">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9Zfv4Ap1e8eKOYnZPtYaWhLkk0d.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elreinosecreto.html" title="Epic el reino secreto">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/81cSsWzjTfR3cJSqnTiHwy1eyPK.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Raya.html" title="Raya y el ultimo dragon">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Bichos.html" title="Bichos una aventura en miniatura">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/Ah3J9OJVc2CNCuH2zMydXy9fmIC.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Loscolegasdelbarrio.html" title="Los colegas del barrio">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/HZQBF7JDd2e9p4rPSbSHuWHaCC.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Hombresdenegro1.html" title="Hombres de negro 1">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/uLOmOF5IzWoyrgIF5MfUnh5pa1X.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Hombresdenegro2.html" title="Hombres de negro 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/enA22EPyzc2WQ1VVyY7zxresQQr.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Hombresdenegro3.html" title="Hombres de negro 3">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/aWFNNnaIjbgml8blv7Nlj3BKfqD.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Hombresdenegro4.html" title="Hombres de negro 4">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dPrUPFcgLfNbmDL8V69vcrTyEfb.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Insidious1.html" title="Insidious 1">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/tmlDFIUpGRKiuWm9Ixc6CYDk4y0.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Insidious2.html" title="Insidious capítulo 2 Insidious 2">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/w5JjiB3O1CLDXbTJe1QpU5RHmlU.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Insidious3.html" title="Insidious capítulo 3 Insidious 3">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iDdGfdNvY1EX0uDdA4Ru77fwMfc.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Insidious4.html" title="Insidious la ultima llave Insidious 4">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/nb9fc9INMg8kQ8L7sE7XTNsZnUX.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Insidious5.html" title="Insidious la puerta roja">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/d07phJqCx6z5wILDYqkyraorDPi.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Elgranturismo.html" title="Gran turismo El gran turismo">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/51tqzRtKMMZEYUpSYkrUE7v9ehm.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elhombredeacero.html" title="Superman el hombre de acero">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dksTL9NXc3GqPBRHYHcy1aIwjS.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Batmanvssuperman.html" title="Batman v Superman el amanecer de la justicia">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5UsK3grJvtQrtzEgqNlDljJW96w.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Redada1.html" title="Redada asesina">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/Abnm1Ws3JH0ReCfEhLMPwPcMcGO.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Redada2.html" title="Redada asesina 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/olA39iaXISiKEkACdELgr0ZRvIF.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Redada3.html" title="Redada mortal">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/58j2eRQ1W9NnKuETQBXg22O0jIL.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Chappie.html" title="Chappie">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/hpnuXlKKWznTgbheGe4iQXzkuwJ.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Unnovatoenapuros1.html" title="Un novato en apuros">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ihKj5zsdkbm8FQ0IsOpAaaqPGX7.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Unnovatoenapuros2.html" title="Un novato en apuros 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/2433Vt8xuDnAIDAJTNx6DEtf9Qb.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Cars1.html" title="Cars 1">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/abW5AzHDaIK1n9C36VdAeOwORRA.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Cars2.html" title="Cars 2">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Cars3.html" title="Cars 3">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fyy1nDC8wm553FCiBDojkJmKLCs.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Elhoyo1.html" title="El hoyo">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/qv30R1uDDKTLWDlNc3qi6MRdRf0.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Batman1.html" title="Batman regresa Batman 1">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/jKBjeXM7iBBV9UkUcOXx3m7FSHY.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Batman2.html" title="Batman inicia Batman 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4MpN4kIEqUjW8OPtOQJXlTdHiJV.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Batman3.html" title="Batman 3">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/74xTEgt7R36Fpooo50r9T25onhq.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Johnnyenglish1.html" title="Johnny english 1">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/mmzW88tnkB2MnOV3Un2F9IUxSnZ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Johnnyenglish2.html" title="Johnny english 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1T6qnlTVkrGr0mpgZbpSwVU5FWW.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Johnnyenglish3.html" title="Johnny english 3">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/tCBxnZwLiY1BOKw3tH6AxHZdqPh.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Macholibre.html" title="Macho libre">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kh7B91bMl2lZ0mH9WhPfaNUIEQH.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Trucootrato.html" title="Truco o trato">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/w0nmol4g7n6MFfhfphV7GzHHYjB.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Sangresudorygloria.html" title="Sangre sudor y gloria">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9WqA0Ry9wmTzFvom8mNbcyKZQgP.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Musicaamigosyfiesta.html" title="Musica amigos y fiesta Dj">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/4iUAMj3iieLAVyKSkhOy0rSAomV.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Terrifier1.html" title="Terrifier 1">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6PQqC4SbY910VvyVad6mvsboILU.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Terrifier2.html" title="Terrifier 2">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Eljusticiero1.html" title="El justiciero 1 The Equalizer 1">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9u4yW7yPA0BQ2pv9XwiNzItwvp8.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Eljusticiero2.html" title="El justiciero 2 The Equalizer 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/cQvc9N6JiMVKqol3wcYrGshsIdZ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Eljusticiero3.html" title="El justiciero 3 The Equalizer 3">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Avatar1.html" title="Avatar 1">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kyeqWdyUXW608qlYkRqosgbbJyK.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Avatar2.html" title="Avatar el camino del agua Avatar 2">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Desdemicielo.html" title="Desde mi cielo">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7MEJLzSpLXUrKRyC3ORabUQdXmp.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Tresmetrossobreelcielo.html" title="Tres metros sobre el cielo">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/nNoMfNPnvEzGADXDkP6eJAP81KB.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Tengoganasdeti.html" title="Tengo ganas de ti">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/z13I3sWzOoKBDAEpJ7iK9bSznQn.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Masalladelcielo.html" title="Mas alla del cielo">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/aYI5NwpkyatEymuOWCOy7Q7Q1MN.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Unavidaenunaño.html" title="Una vida en un año">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/xGDbQI7Gtgurt9W5ez6Tim2lpS2.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/30MinutosoMenos.html" title="30 minutos o menos">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gkCO4bf8kDxF4wsUOMzhYk3Pgz2.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Tresmetrossobreelcielo.html" title="Sangre por sangre">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gvP6R6juhe2IpCG7QGDgjyUvm0g.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Agentesdeldesorden.html" title="Agentes del desorden vamos de pilis">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/kZkRMq0zt1cxZI2Fe5A3NypiDBG.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Hitmanagente47.html" title="Hitman agente 47">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/52NXkgvzRYjRnqRPpqjpiwsIgRG.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/LospuentesdeMadison.html" title="Los puentes de madison">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/xjGrjvD94HvANtEurCXDxGkc0Gj.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Chicainterrumpida.html" title="Chica interrumpida Inocencia interrumpida">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dOBdatHIVppvmRFw2z7bf9VKJr9.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Coco.html" title="Coco">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Superrapidosyfueriosos.html" title="Super rapidos y furiosos">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iuIWl90qCpoxv6g775JB6Kg0m86.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Tinkerbellylabestiadenuncajamas.html" title="Tinkerbell y la bestia de nunca jamas">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3S0mmmpYStB3GqodRghcfOt81wQ.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/MazeRunner1.html" title="Maze Runner Correr o morir">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ode14q7WtDugFDp78fo9lCsmay9.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/MazeRunner2.html" title="Maze Runner Prueba de fuego">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/mYw7ZyejqSCPFlrT2jHZOESZDU3.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/MazeRunner3.html" title="Maze Runner La cura mortal">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/2zYfzA3TBwrMC8tfFbpiTLODde0.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Rec1.html" title="Rec 1">
+<div class="poster" data-name="Terror"><span><img src="https://cuevana.biz/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FvIoBgFBJuqcIzudkFyagJuCxHZ7.jpg&w=640&q=75" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rec2.html" title="Rec 2">
+<div class="poster" data-name="Terror"><span><img src="https://cuevana.biz/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F9C7GrP6g29hklOqtGE0eEUbsPeC.jpg&w=640&q=75" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rec3.html" title="Rec 3 el comienzo">
+<div class="poster" data-name="Terror"><span><img src="https://cuevana.biz/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FcRVSZ03HIXKOKfRaKd00gZC5uqA.jpg&w=640&q=75" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Rec4.html" title="Rec 4 apocalipsis">
+<div class="poster" data-name="Terror"><span><img src="https://cuevana.biz/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FezWbQjJtCYgpu692haXJaYgRHmZ.jpg&w=640&q=75" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Welcomealnorte.html" title="Welcome al norte">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9sA8HGHvbm9CqIJZfFmFZxgsOH6.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Latorreoscura.html" title="La torre oscura">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/eVTlk5O6simP30vTd3sA1BNQZgV.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Piratasdelcaribe1.html" title="Piratas del Caribe la maldición del perla negra">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/poHwCZeWzJCShH7tOjg8RIoyjcw.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Piratasdelcaribe2.html" title="Piratas del caribe 2 el cofre de la muerte">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/uXEqmloGyP7UXAiphJUu2v2pcuE.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Piratasdelcaribe3.html" title="Piratas del caribe 3 en el fin del mundo">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/jGWpG4YhpQwVmjyHEGkxEkeRf0S.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Piratasdelcaribe4.html" title="Piratas del caribe 4 navegando aguas misteriosas">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/keGfSvCmYj7CvdRx36OdVrAEibE.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Piratasdelcaribe5.html" title="Piratas del caribe 5 la venganza de salazar">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qwoGfcg6YUS55nUweKGujHE54Wy.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Dondeestaelfantasma1.html" title="Y donde esta el fantasma 1 A haunted house 1">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/pAVGfrADDvKMgoZnJLSCiLBCCiG.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Dondeestaelfantasma2.html" title="Y donde esta el fantasma 2 A haunted house 2">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/oV7M00fPXy5P0nbdeMbSUjYv0vx.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elvengadorfantasma1.html" title="Ghost Rider El motorista fantasma El vengador fantasma 1">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8LaVQiXBsnlo7MXCPK1nXTVARUZ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elvengadorfantasma2.html" title="Ghost Rider espiritu de venganza El vengador fantasma 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fUJOWsjjE8u1r4YOLYe1RLYy7bm.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/ElEspecialistaResurrección.html" title="El especialista resurrección">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/y1JPE0tTPFgfxJFSpLgHavWuvnu.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/MonsterhouseLacasadelossustos.html" title="Monster house la casa de los sustos">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/r4BrEpGD2OlOTHvVwy0lXzxAGqs.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/ElCadáverdelaNovia.html" title="El cadaver de la novia">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/isb2Qow76GpqYmsSyfdMfsYAjts.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/LaLeyendadelJineteSinCabeza.html" title="La leyenda del jinete sin cabeza">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/n3fNIY2P8jUmyz1IK1YRp94byvQ.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/Casi300.html" title="Casi 300">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/DWQOjAPvM8Kk1Qp3Xq0zae0Z6w.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Eneljuegodelasesino.html" title="night hunter En el juego del asesino">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/hI3Ic6tFF0jKVu5K415fITQd38C.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLaBatalladeFreezercontraelPadredeGoku.html" title="Dragon Ball Z La batalla de freezer contra el Padre de Goku">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/83BFmLVgUWXQIwO2Jo5CaHo5bij.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallUnaAventuraMística.html" title="Dragon Ball una aventura mistica">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4uPs9rjKkGWOmc5QO4VV08YdLpV.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZ¡DevuélvanmeamiGohan!.html" title="Dragon Ball Z Devuelvanme a mi Gohan">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ywtyEDTM2YO7qod7USNNwhrAfvA.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZElCombateFinal.html" title="Dragon Ball Z El combate final">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/A0VKJ6eRIubW6wH4eAwcpQfjoRD.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLosRivalesmásPoderosos.html" title="Dragon Ball Z Los rivales mas poderosos">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sN4HyDkBFGtNNg9fm2iETQNUMSt.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLaGalaxiaCorrePeligro.html" title="Dragon Ball Z La galaxia corre peligro">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iihTK9Af8G1ZzBjkIIAV4qQMkzF.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Dragonballzlosgerrerismaspoderosos.html" title="Dragon Ball Z los guerreros mas poderosos">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/k23L4i0JjwU8D5flnR5damgXFcS.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZEl PoderInvencible.html" title="Dragon Ball Z El poder invencible">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6iO8TJCyLI4BiPYOvdwzPV2bhoV.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZEl HombremásFuertedeesteMundo.html" title="Dragon Ball Z El hombre mas fuerte de este mundo">
+<div class="poster" data-name="Infantiles"><span><img src="https://cuevana.biz/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F8XfPcbxV545a0KHuCVZQtP3EUra.jpg&w=640&q=75" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLaPeleadelosTresSaiyajin.html" title="Dragon Ball Z La pelea de los tres saiyajin ">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/uVJqC187rKxQ1sJsWlKjNfAzeTk.jpg" width="110px" height="140px"></span></a></div><a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallLaprincesadurmientedelcastilloembrujado.html" title="Dragon Ball La princesa durmiente del castillo embrujado">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/bPmA7dtMUoh6fK8XjauoKB4FcSu.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallLaleyendadeShenLong.html" title="Dragon Ball La leyenda de Shen Long">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dZCWRFJnwyxYOhzAhf7Xyru4moB.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZElAtaqueDelDragón.html" title="Dragon Ball Z El ataque del dragon">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gd3argrGcs6mEHYPmnVHrP11sCG.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallElcaminohaciaelpoder.html" title="Dragon Ball El camino hacia el poder">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/wuW7jeE7pX7glnZpCcJZGfC0YSr.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallGTLaLegendariaEsferadeCuatroEstrellas.html" title="Dragon Ball GT La legendaria esfera de cuatro estrellas">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/vjqcrp7nQGUVkVWeJR3HUAj0AyR.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZGokuesunSuperSaiyajin.html" title="Dragon Ball Z Goku es un super saiyajin">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1lmwZTsqwTtvd3m60pyQfhGM2Ut.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLaBatallamásGrandedeesteMundoestáporComenzar.html" title="Dragon Ball Z La batalla mas grande de este mundo esta por comenzar">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fDX4Dp8IKvjBAaEb5MOJrGkxWX0.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZElRegresodelGuerreroLegendario.html" title="Dragon Ball Z El regreso del guerrero legendario">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/77EUjs4g4omux4zGYZNtv4o08xE.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLaResurreccióndeFreezer.html" title="Dragon Ball Z La resurrección de freezer">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/soq3AxjALdBfdPAm8H7yuMmNL5Y.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLaBatalladelosDioses.html" title="Dragon Ball Z La batalla de los dioses">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/nxZEdYcHMuD8SSuwusDnK9CD2H1.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallZLaFusióndeGokuyVegeta.html" title="Dragon Ball Z La fusión de goku y vegeta">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/7AHvaEAeQfkfJ4OqcBePxa2ao09.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/DragonBallTorikoOnePieceYDBZEspecialcolaboracion.html" title="Dragon Ball Toriko one piece Y DBZ especial colaboracion">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1azUShBxKqHUUJf61BIpnJTtAWO.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Index-verpeliculas/JuegodeGemelas.html" title="Juego de Gemelas">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/9y2hFxWxtZfO1WrYUu5cjWNc9QD.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/TinkerbellCampanillaylosJuegosdePixieHollow.html" title="Tinker bell Campanilla y los Juegos de Pixie Hollow">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/c962jDNYejdctu7pb8zqS2Miey9.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/TinkerBell.html" title="Tinker Bell">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3Ma0r1n8kfH7UaQMS7bJ9KsYUjT.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/TinkerBellyElSecretodeLasHadas.html" title="Tinker Bell y El secreto de las hadas">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/bnbzEKX9LgDuJ0VBGm5d60mKDaR.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/TinkerbellHadasyPiratas.html" title="Tinker bell Hadas y piratas">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fbKMx3taGom2ASpbLKtglW3XT87.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Zootopia.html" title="Zootopia">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/ElProximoViernes.html" title="Friday El proximo viernes">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dP4fYCGQZzg17ta7FvLwJVCwwt9.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/FridayTodounViernes.html" title="Friday Todo un Viernes">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/3Ya1RurP2NqaYoiok4DmfO41rCC.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/FridayViernesInfernal.html" title="Friday Viernes Infernal">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sxHFGPKLWj9e3aaA6wGVxghoiPE.jpg" width="110px" height="140px"></span></a></div>
+
+</div><br>
+<abajo>
+<script>
+const filterItem = document.querySelector(".items");
+const filterImg = document.querySelectorAll(".gallery .poster");
+window.onload = ()=>{ 
+filterItem.onclick = (selectedItem)=>{ 
+if(selectedItem.target.classList.contains("item")){ 
+filterItem.querySelector(".active").classList.remove("active"); 
+selectedItem.target.classList.add("active"); 
+let filterName = selectedItem.target.getAttribute("data-name"); 
+filterImg.forEach((image) => {
+let filterImges = image.getAttribute("data-name"); 
+if((filterImges == filterName) || (filterName == "all")){
+image.classList.remove("hide"); 
+image.classList.add("show"); }
+else{image.classList.add("hide"); image.classList.remove("show"); }});}}
+for (let i = 0; i < filterImg.length; i++) {
+filterImg[i].setAttribute("onclick", "preview(this)"); }}
+</script>
+</body>
