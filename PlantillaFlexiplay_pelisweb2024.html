@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla Ver peliculas flexi play</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#myInput').on('input', function() {
+var value = $(this).val().toLowerCase();
+$('.gallery >.poster').filter(function() {
+$(this).toggle($(this).find('a').attr('title').toLowerCase().indexOf(value) > -1)});});});
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{user-select:none;margin:0;padding:0;box-sizing:border-box;outline:none;user-select:none;}
+body{background:#000000;}
+#xs-header{background:#000;left: 0;position: fixed;top: 0;width: 100%;z-index: 90;height: 8%;}
+.xsposter{margin:0px;position:relative;display:inline-block;overflow-x:scroll;overflow-y:hidden;}
+play{background:#000;color:#fff;padding:5px;left:0;right:0;height:2.5em;display:flex;flex-direction:row;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;}
+.wrapper{margin:0px;max-width:1100px;}
+.wrapper nav{display:flex;justify-content:center;}
+.wrapper .items{display:flex;max-width:720px;width:100%;justify-content:space-between;overflow:auto;}
+.items span{background:#000000;color:#fff;padding:7px 25px;font-size:15px;cursor:pointer;border:0px solid #ddd;transition: all 0.3s ease;}
+.items span.active{color:#fff;background:#ff0014;}
+.gallery{display: flex;flex-wrap: wrap;margin-top: 3px;}
+.gallery .poster{width: calc(100% / 3);padding:5px;}
+.gallery .poster span{display: flex;width: 100%;overflow: hidden;}
+.gallery .poster img{background:#000000;border-radius:7px;vertica1-align: middle;transition: all 0.3s ease;cursor: pointer;}
+.gallery .poster.hide{display: none;}
+@keyframes animate {
+0%{transform: scale(0.5);}
+100%{transform: scale(1);}}
+@media (max-width: 1000px) {
+.gallery .poster{width: calc(100% / 6);}}
+@media (min-width: 1360px) {
+.gallery {margin-left: -10%;margin-right: -10%;}}
+@media (max-width: 800px) {
+.gallery .poster{width: calc(100% / 5);}}
+@media (max-width: 700px) {
+.wrapper nav .items{max-width: 1000px;}nav .items span{padding: 7px 15px}}
+@media (max-width: 600px) {
+.wrapper{margin: 0px auto;}
+.wrapper nav .items{overflow: auto;}
+nav .items span{margin:0px;}
+.gallery .poster{width: calc(100% / 3);}} 
+
+.xaviec{background:#000000;position:fixed;top:-5px;width:100%;}
+</style>
+</head>
+<body>
+<div class="xaviec">
+<play>
+<h1 style="color:#000000;font-size:35px;"><strong style="color:#000000;"></strong></h1>
+<input id="myInput" type="search" placeholder="Buscar Películas..." size="13" style="border-radius: 6px; outline: none; border: 0px; padding: 4px 4px; font-size: 12pt;">
+</play>
+<div class="wrapper">
+<nav><div class="items">
+    
+<h1><span class="item active" data-name="all">Todas</span></h1>
+
+<h1><span class="item" data-name="Estrenos">Estrenos</span></h1>
+
+<h1><span class="item" data-name="Acción">Acción</span></h1>
+
+<h1><span class="item" data-name="Terror">Terror</span></h1>
+
+<h1><span class="item" data-name="Infantiles">Infantiles</span></h1>
+
+<h1><span class="item" data-name="Comedia">Comedia</span></h1>
+
+<h1><span class="item" data-name="Aventura">Aventura</span></h1>
+
+<h1><span class="item" data-name="Romance">Romance</span></h1>
+
+<h1><span class="item" data-name="Drama">Drama</span></h1>
+
+
+</div></nav></div></div><br><br><br><br>
+<style type="text/css">
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Raleway';}
+body{background:#000000;}
+div .xstv{overflow-x:scroll;overflow-y:hidden;white-space:nowrap;margin:1px;border-radius:7px;}
+#header{position:fixed;width:100%;top:-5px;}
+footer{background:#000;display:flex;width:100%;bottom:0;justify-content:space-around;align-items:center;padding:6px 2px;position:fixed;left:0;right:0px;color:#FFFFFF;}
+footer div{font-size:10px;text-align:center;justify-content:center;align-items:center;}
+footer i{padding-left:0px;}
+/*footer end*/
+footer img{height:20px;width:20px;margin-bottom:3px;}
+footer svg{height:20px;width:20px;margin-bottom:3px;}
+footer span{transform:scale(1);}
+#s-f{margin-bottom:40px;}
+.slider{width:100%;margin:auto;overflow:hidden;}
+.slider ul{display:flex;padding:0;width:400%;
+animation:cambio 10s infinite alternate linear;}
+.slider li{width:100%;list-style:none;}
+.slider img{width:100%;}
+@keyframes cambio{0% {margin-left: 0;}20% {margin-left: 0;}25% {margin-left: -100%;}45% {margin-left: -100%;}50% {margin-left: -200%;}70% {margin-left: -200%;}75% {margin-left: -300%;}100% {margin-left: -300%;}}
+</style>
+<script type="text/javascript">
+//tabs
+function xavi(tabc) {var i;
+var xavi = document.getElementsByClassName("xaviec");
+for (i = 0; i < xavi.length; i++) {xavi[i].style.display = "none";}
+document.getElementById(tabc).style.display = "block";}
+</script>
+</div>
+<!-- Slider Portada -->
+<div class="slider">
+<ul><li><a href="https://ivanflexi.github.io/Index-verpeliculas/Terrifier3.html"><img src="https://i.postimg.cc/85b2ydbS/20241016-143636-0000.png" alt=""></a></li>  
+
+<li><a href="https://ivanflexi.github.io/Index-verpeliculas/Eljoker.html"><img src="https://i.postimg.cc/JzB9wCQK/20241016-143224-0000.png" alt=""></a></li> 
+
+<li><a href="https://ivanflexi.github.io/Index-verpeliculas/Elhoyo2.html"><img src="https://i.postimg.cc/jqg9LSgZ/20241016-142712-0000.png" alt=""></a></li> 
+
+<li><a href="https://ivanflexi.github.io/Index-verpeliculas/Elhoyo2.html"><img src="https://i.postimg.cc/wT1rJYnH/20241016-135355-0000.png" alt=""></a></li>
+</ul>
+</div>
+<div class="gallery">
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Laforja.html" title="La Forja"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/loYpxub1ZZVmI4JzPC0jLkerq3g.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/SeddeVenganza2.html" title="Sed de Venganza 2"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/rWS8Wo9aN90GcokuvpMNjJYRijA.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Sonríe.html" title="Smile 2 Sonrie 2"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/yqfeWTE1RCl60E8V3SfFAgr0jj6.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/LostiposmalosTrucooatraco.html" title="Los tipos malos Truco o atraco"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/4njXv4s77hq9VGMOquvRQDiu53W.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/AlrescatedeFondodeBikiniLapelículadeArenitaMejillas.html" title="Al rescate de Fondo de Bikini La película de Arenita Mejillas"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/q8LdEq7DyeeHRWjhy8USd1CmesU.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Terrifier3.html" title="Terrifier Payaso siniestro"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7NDHoebflLwL1CcgLJ9wZbbDrmV.jpg" width="110px" height="140px"></span></a></div>  
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elhoyo2.html" title="El hoyo 2"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/3awoWMKDfTROjGB2vivky1TCSRd.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Eljoker.html" title="Joker folie a deux el guazon 2 el joker 2"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/if8QiqCI7WAGImKcJCfzp6VTyKA.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Robotsalvaje.html" title="Robot salvaje"> <div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/sDoXpaKZmrzCSJH63zZvQQ9A7VK.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Alien: Romulus.html" title="Alien Romulus">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Los feos.html" title="Los feos">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/abNsPyjwSYwOVsx2m0mWrq22xGk.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Transformers Uno.html" title="Transformers Uno">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qbkAqmmEIZfrCO8ZQAuIuVMlWoV.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/La Sustancia.html" title="La Sustancia">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/cQD1qEnPOKUPHAui0okOLZSgitu.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Flow.html" title="Flow">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/enRimDhtFfb7hNTQlOjrgK8O8UO.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Hellboy: The Crooked Man.html" title="Hellboy The Crooked Man">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iz2GabtToVB05gLTVSH7ZvFtsMM.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/The Mouse Trap.html" title="The Mouse Trap">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3ovFaFeojLFIl5ClqhtgYMDS8sE.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/El Cuervo.html" title="El Cuervo">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/uUUx4kN6uCvXnjGWOv79gUBxdYE.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/El candidato honesto.html" title="El candidato honesto">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/hmV5HPkbQuzgPo11Xm70CMQV3iZ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Romper el círculo.html" title="Romper el circulo">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/AjV6jFJ2YFIluYo4GQf13AA1tqu.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Fabricante de lágrimas.html" title="Fabricante de lagrimas">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/i91SgC0uQa3fb68foFS3zgaMUuD.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Megamente.html" title="Megamente contra el sindicato de la perdicion">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/1N7terrMeZPwK5qq31MUD0HQ3IG.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Beekeeper: Sentencia de muerte.html" title="Beekeeper Sentencia de muerte">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/A7EByudX0eOzlkQ2FIbogzyazm2.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Kung Fu Panda 4.html" title="Kung Fu Panda 4">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Godzilla y Kong: El nuevo imperio.html" title="Godzilla y Kong El nuevo imperio">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/A Través de mi Ventana 3.html" title="A Traves de mi Ventana 3 A Traves de tu mirada">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gwpTgtwVAwmvivBN8rAQABpx9Am.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Tarot de la muerte.html" title="Tarot de la muerte">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gAEUXC37vl1SnM7PXsHTF23I2vq.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Damsel.html" title="Damsel">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/AgHbB9DCE9aE57zkHjSmseszh6e.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Furiosa: De la saga Mad Max.html" title="Furiosa De la saga Mad Max">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iADOJ8Zymht2JPMoy3R7xceZprc.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Bad Boys: Hasta la muerte.html" title="Bad Boys Hasta la muerte">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/oGythE98MYleE6mZlGs5oBGkux1.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Baki Hanma vs. Kengan Ashura.html" title="Baki Hanma vs. Kengan Ashura">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/etbHJxil0wHvYOCmibzFLsMcl2C.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Megamente.html" title="IntensaMente 2 Inside Out 2 Del reves 2">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Winnie The Pooh: Miel y Sangre 2.html" title="Winnie The Pooh Miel y Sangre 2">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/2sADrLwMQof6yYmrJRSa04tFZuS.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Mi villano favorito 4.html" title="Mi villano favorito 4">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3w84hCFJATpiCO5g8hpdWVPBbmq.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Deadpool & Wolverine.html" title="Deadpool & Wolverine">
+<div class="poster" data-name="Estrenos"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos1.html" title="Rapidos  y  Furiosos 1">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gqY0ITBgT7A82poL9jv851qdnIb.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos2.html" title="Rapidos  y  Furiosos 2">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6nDZExrDKIXvSAghsFKVFRVJuSf.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos3.html" title="Rapidos  y  Furiosos 3">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/9OYC68a3NH5ySyTBjLQDzxhApMi.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos4.html" title="Rapidos  y  Furiosos 4">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/b4oE1Bw6KmON4qNIfjgJbVYkOWZ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos5.html" title="Rapidos y Furiosos 5">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/mtRhCiT4hZzaP6c3DJqec1Jjm0i.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos6.html" title="Rapidos y Furiosos 6">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/3EXOOkhSmJQ9DisNmIjZ8Xi633I.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos7.html" title="Rapidos y Furiosos 7">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/hO02IBZmvbn2RULu4myYVl2NUGj.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos8.html" title="Rapidos y Furiosos 8">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/vXntMTWnh3QRmbY8z53eUlQKmQB.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos9.html" title="Rapidos y Furiosos 9">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos10.html" title="Rapidos y Furiosos 10">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/fiVW06jE7z9YnO4trhaMEdclSiC.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Rapidos y Furiosos Hobbs y Shaw.html" title="Rapidos y Furiosos Hobbs y Shaw">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Five Nights at Freddy's.html" title="Five Nights at Freddy s">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/4dKRTUylqwXQ4VJz0BS84fqW2wa.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/El Exorcista del Papa.html" title="El exorcista del papa">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/4n7HJ322ARRWytwxLKEZi0mIrYE.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/El Exorcismo De Dios.html" title="El exorcismo de Dios">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/8Tev1W93hM5YaHIY0j6goDENXyO.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Ruega por nosotros.html" title="Ruega por nosotros">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/llHklmHQEDwTgbwGrPvQ5ouSy2k.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Terrifier1.html" title="Terrifier 1">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/6PQqC4SbY910VvyVad6mvsboILU.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Terrifier2.html" title="Terrifier 2">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Annabelle1.html " title="Annabelle 1">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/yLsuU2P2SpDYFwtZQ7dtfVAf6TE.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Annabelle2.html " title="Annabelle 2">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Annabelle3.html " title="Annabelle 3">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qWsHMrbg9DsBY3bCMk9jyYCRVRs.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Trick.html" title="Trick Truco o Trato Terror en Halloween">
+<div class="poster" data-name="Terror"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/w0nmol4g7n6MFfhfphV7GzHHYjB.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Spider-Man Cruzando el Multiverso.html" title="Spider Man Across the Spider Verse">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Supermariobros.html" title="Super mario bros">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Lasirenita.html " title="La sirenita">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/MiraculousLaddybug.html" title=" Miraculous  Ladybug">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/dQNJ8SdCMn3zWwHzzQD2xrphR1X.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Elgatoconbotasdeseo.html " title="El gato con Botas El ultimo deseo">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kuf6dutpsT0vSVehic3EZIqkOBt.jpg" width="110px" height="140px"></span></a></div>
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Dondeestaelfantasma1.html" title="Donde esta el fantasma 1">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/pAVGfrADDvKMgoZnJLSCiLBCCiG.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Dondeestaelfantasma2.html" title="Donde esta el fantasma 2">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/qv3uZUta4UWRNDMdDKSRGhA6lwC.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Proyectox.html" title="Proyecto x">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/lUPDGT3lyRrq8SvWuNWG2DP64bR.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Supercool.html" title="Super Cool">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/hx6sr6iMpqy2uxs7Gl6Kdq7jwLH.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Barbie_2023.html" title="Barbie">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/JuegodeGemelas.html" title="Juegos de gemelas">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/9y2hFxWxtZfO1WrYUu5cjWNc9QD.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Lanochedesuvida.html" title="La noche de su vida">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/mUi6nEbo04DR1YwflbZX1RR7UwS.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Abracadabra1.html" title="Hocus Pocus 1 Abracadabra 1 El retorno de las brujas 1">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/by4D4Q9NlUjFSEUA1yrxq6ksXmk.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Abracadabra2.html" title="Hocus Pocus 2 Abracadabra 2 El retorno de las brujas 2">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/7ze7YNmUaX81ufctGqt0AgHxRtL.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Agentesdeldesorden1.html" title="Agentes del desorden">
+<div class="poster" data-name="Comedia"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/kZkRMq0zt1cxZI2Fe5A3NypiDBG.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Moonfall.html" title="Moonfall">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Harthur.html" title="Arthur">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/q1DDwFuWeQlwR0lcjFiEsM8iRkd.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Interestelar.html" title="Interstellar">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Missperegrine.html" title="Miss Peregrine y los niños peculiares">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/CIlbMFOfYDj0MP23hsIYhFGrL6.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Loimposible.html " title="Lo imposible">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/oTtdBrZOaczS4ZcBJ0ZCzG65A4L.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/10.000AC.html" title="10.000 bc ">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9I7gV6wRbGnbfI3XOKjHeLMjYEo.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Granturismo.html" title="Gran turismo">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/51tqzRtKMMZEYUpSYkrUE7v9ehm.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/127horas.html" title="127 horas">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/kJdktpjBkhR8NjBXW9kruNpjnPt.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Avatar1.html" title="Avatar 1">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/kyeqWdyUXW608qlYkRqosgbbJyK.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Avatar2.html" title="Avatar 2 El camino del agua">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Atravezdemiventana1.html" title="Atravez de mi ventana 1">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/3F5MkMadQOWiZNVaNuOuw6UaK7a.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Atravezdemiventana2.html" title="Atravez de mi ventana 2">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/hisRiTK0zCP1sXtlCSrmFRVOVlz.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Lovesimon.html" title="Love simon Yo soy simon">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/5YUYg5q7QfC4IoNwNUtiwdiYKPr.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Titanic.html" title="Titanic">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Tengoganasdeti.html" title="Tengo ganas de ti">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/z13I3sWzOoKBDAEpJ7iK9bSznQn.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Tresmetrossobreelcielo.html" title="Tres metros sobre el cielo">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/nNoMfNPnvEzGADXDkP6eJAP81KB.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/LospuentesdeMadison1.html" title="Los puentes de madison">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/xjGrjvD94HvANtEurCXDxGkc0Gj.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Elniñoquedomoelviento.html" title="El niño que domo el viento"><div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/yOr7RxHw15MMXNxGMXSmngDqHyI.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Letrasexplicitas.html" title="Letras Explícitas"><div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9B63hMwU6iICtNDTISCaZQ5US7R.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Lasociedaddelanieve.html" title="La sociedad de la nieve"><div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/2e853FDVSIso600RqAMunPxiZjq.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Juegodehonor.html" title="Juego de honor Coach carter">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/y3HOTTyM5nLsdUzXFtFCohG28qj.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Garra.html" title="Garra">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/yjtvXD7FyjQSLqvatkY0y1CNazR.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Eljoker.html" title="El joker el Guazon">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Elhoyo.html" title="El hoyo">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/qv30R1uDDKTLWDlNc3qi6MRdRf0.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Musicaamigos.html" title="Musica amigos y fiesta Dj">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/4iUAMj3iieLAVyKSkhOy0rSAomV.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Desdemicielo1.html" title="Desde mi cielo">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7MEJLzSpLXUrKRyC3ORabUQdXmp.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Eljuegodelasecino.html" title="El juego del asesino">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/hI3Ic6tFF0jKVu5K415fITQd38C.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Lamborghini.html" title="Lamborghini">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/RKgnYLhCNGCUkrhiCRrs40rEHe.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Glass.html" title="Glass">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Whiplash.html" title="Whiplash musica y obsesion">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/sL32IZkyjlF7otj5vcUxiKSKzg5.jpg" width="110px" height="140px"></span></a></div> 
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Numero9.html" title="Numero 9">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/3uqXGOH4BQ2CLJWkDJZ0PzbUzOn.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/MortalKombat.html" title="Mortal Kombat">
+<div class="poster" data-name="Acción"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/ybrX94xQm8lXYpZAPRmwD9iIbWP.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elreyleon1.html" title="El rey león 1">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elreyleon2.html" title="El rey león 2">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sWR1x6UCMCGN9xEf8RGhPS934X0.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Elreyleon3.html" title="El reyleón 3">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/sVJME5R1NmTXtbdnAxYPx7Xa7kr.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Culpamia.html" title="Culpa mia">
+<div class="poster" data-name="Romance"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/w46Vw536HwNnEzOa7J24YH9DPRS.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Reyesdelasolas.html" title="Reyes de las olas">
+<div class="poster" data-name="Infantiles"><span><img src="https://media.themoviedb.org/t/p/w440_and_h660_face/oVxhYpFUvOETqpVuS4mGjceC16v.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Index-verpeliculas/Flamin'Hot.html" title="Flamin Hot El sabor que cambio la historia">
+<div class="poster" data-name="Drama"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/a7KyFMPXj0iY4EoLq1PIGU1WJPw.jpg" width="110px" height="140px"></span></a></div>
+
+<a href="https://ivanflexi.github.io/Verpelis1-2024/Alien: Romulus.html" title="Jack el cazagigantes">
+<div class="poster" data-name="Aventura"><span><img src="https://media.themoviedb.org/t/p/w260_and_h390_bestv2/9jSI7saUX9Qz0JLh19jX2ulEwL7.jpg" width="110px" height="140px"></span></a></div>
+  
+</div><br>
+<abajo>
+<script>
+const filterItem = document.querySelector(".items");
+const filterImg = document.querySelectorAll(".gallery .poster");
+window.onload = ()=>{ 
+filterItem.onclick = (selectedItem)=>{ 
+if(selectedItem.target.classList.contains("item")){ 
+filterItem.querySelector(".active").classList.remove("active"); 
+selectedItem.target.classList.add("active"); 
+let filterName = selectedItem.target.getAttribute("data-name"); 
+filterImg.forEach((image) => {
+let filterImges = image.getAttribute("data-name"); 
+if((filterImges == filterName) || (filterName == "all")){
+image.classList.remove("hide"); 
+image.classList.add("show"); }
+else{image.classList.add("hide"); image.classList.remove("show"); }});}}
+for (let i = 0; i < filterImg.length; i++) {
+filterImg[i].setAttribute("onclick", "preview(this)"); }}
+</script>
+  </body>
